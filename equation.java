@@ -23,7 +23,7 @@ public class equation {
 		
 		Object[] possibleValues = { "temperature", "pressure", "volume","amount of gas"};
 		String selectedValue = (String)JOptionPane.showInputDialog(null,
-		"Choose one", "Input",
+		"Calculate:", "Output",
 		JOptionPane.INFORMATION_MESSAGE, null,
 		possibleValues, possibleValues[0]);
 		
@@ -61,12 +61,12 @@ public class equation {
 		
 		// calculate parameters based on PV=nRT
 		if (selectedValue == "pressure") {
-				double P =  gas1.getR() * gas1.getT() / gas1.getV() / gas1.getn();  
+				double P =  gas1.getn() * gas1.getR() * gas1.getT() / gas1.getV();  
 				gas1.setP( P );
 		}
 		
 		if (selectedValue == "volume") {
-			double V =  gas1.getR() * gas1.getT() / gas1.getP() / gas1.getn(); 
+			double V =  gas1.getn() * gas1.getR() * gas1.getT() / gas1.getP() ; 
 			gas1.setv( V );
 	}
 		
